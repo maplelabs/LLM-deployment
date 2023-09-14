@@ -50,6 +50,8 @@ def main():
     """
     Main function which run CMD utility
     """
+    print("Enter single-line prompts e.g., What is Alphabet and how does it relate to Google")
+
     while True:
         
         try:
