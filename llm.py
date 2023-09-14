@@ -12,6 +12,8 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline as tx_pip
 from langchain import PromptTemplate, LLMChain, HuggingFacePipeline
 
 
+# This model gets downloaded from hugging-face and gets stored in our disk for future use
+# Model download == downloading it's structure and the weights i.e., parameters
 MODEL_ID = "NousResearch/Llama-2-13b-chat-hf"
 
 

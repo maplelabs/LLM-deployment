@@ -12,6 +12,8 @@ from starlette.requests import Request
 from transformers import AutoTokenizer, AutoModel
 
 
+# This model gets downloaded from hugging-face and gets stored in our disk for future use
+# Model download == downloading it's structure and the weights i.e., parameters
 MODEL_ID = "BAAI/bge-large-zh"
 
 
