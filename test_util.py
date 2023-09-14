@@ -21,7 +21,7 @@ def time_tracker(func):
         start_time = time.time()
         func(prompt)
         end_time = time.time()
-        print(f"\n\n===API call took {int(math.ceil(end_time - start_time))} seconds===\n\n")
+        print(f"\n\n=== API call took {int(math.ceil(end_time - start_time))} seconds ===\n\n")
 
     return wrapper
 

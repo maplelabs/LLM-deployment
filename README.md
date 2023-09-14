@@ -25,20 +25,20 @@ Vector databases like FAISS, Redis provide the ability perform similarity search
 
 - Create virtual-environment  
    ```bash
-   python3 -m venv test-venv
+   python3 -m venv venv
    ```
 
 - Activate virtal-environment  
    ```bash
-   source test-venv/bin/activate
+   source venv/bin/activate
    ```
 
 - Install pip packages  
    ```bash
-   pip install -r py_requirements.txt
+   pip install --require-virtualenv -r py_requirements.txt
    ```
 
-- Start the single-node Ray cluster. This also starts a UI based dashboard on `YOUR-VM-IP:8265` port which you can use to explore logs, check resource utilization, and check for OOM errors etc.
+- Start the single-node Ray cluster. This also starts a UI based dashboard on `http://YOUR-VM-IP:8265` port which you can use to explore logs, check resource utilization, and check for OOM errors etc.
   ```bash
   ray start --head --dashboard-host 0.0.0.0 --dashboard-port 8265 --num-cpus 4 --num-gpus 6
   ```
@@ -50,13 +50,20 @@ Vector databases like FAISS, Redis provide the ability perform similarity search
 
 - Other useful commands
   ```bash
-  ray stop # Stop the Ray cluster
-  ray status # Check the status of Ray cluster
+  # Stop the Ray cluster
+  ray stop
 
-  serve shutdown # Shutdown the current deployed Apps/Actors on Ray cluster
-  serve status # Get the status of Apps/Actors currently running on Ray cluster
+  # Check the status of Ray cluster
+  ray status
 
-  python3 -m nvitop # Show the utilization of all GPUs in your system
+  # Shutdown the current deployed Apps/Actors on Ray cluster
+  serve shutdown
+
+  # Get the status of Apps/Actors currently running on Ray cluster
+  serve status
+
+  # Show the utilization of all GPUs in your system
+  python3 -m nvitop
   ```
 
 
