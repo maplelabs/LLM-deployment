@@ -29,6 +29,7 @@ class LLMDeployment:
 
         model = AutoModelForCausalLM.from_pretrained(
             MODEL_ID,
+            device_map="auto",  # Equally distributes the Llama model on all the GPUs present in your system. It uses Hugging-Face's accelerate library
             trust_remote_code=True
         )
 
@@ -45,7 +46,6 @@ class LLMDeployment:
             model=model,
             tokenizer=tokenizer,
             use_cache=True,
-            device_map="auto",  # Equally distributes the Llama model on all the GPUs present in your system. It uses Hugging-Face's accelerate library
             max_length=4096,  # Llama has a token limit of 4096 tokens. Set max_length to this value
             do_sample=False,  # This is equivalent to setting temperatue=0 in OpenAI APIs
             num_return_sequences=1,

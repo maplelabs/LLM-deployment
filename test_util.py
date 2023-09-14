@@ -21,7 +21,7 @@ def time_tracker(func):
         start_time = time.time()
         func(prompt)
         end_time = time.time()
-        print("\n\nAPI call took %d seconds", int(math.ceil(end_time - start_time)))
+        print(f"\n\nAPI call took {int(math.ceil(end_time - start_time))} seconds")
 
     return wrapper
 
@@ -51,11 +51,10 @@ def main():
     Main function which run CMD utility
     """
     while True:
-
         try:
             prompt = input("> ")
             ep_fn(prompt)
-        except KeyboardInterrupt:
+        except (KeyboardInterrupt, EOFError):
             sys.exit(0)
 
 

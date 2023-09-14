@@ -58,3 +58,16 @@ Vector databases like FAISS, Redis provide the ability perform similarity search
 
   python3 -m nvitop # Show the utilization of all GPUs in your system
   ```
+
+
+# Testing
+
+- In order to try out the Embedding model
+  ```
+  python test_util.py -ep Embedding
+  ```
+
+- In order to try out the LLM model
+  ```
+  python test_util.py -ep LLM
+  ```
