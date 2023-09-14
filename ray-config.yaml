@@ -3,8 +3,6 @@ proxy_location: EveryNode
 http_options:
   host: 0.0.0.0
   port: 8090
-CPU: 4
-GPU: 6
 applications:
 - name: embedding_app
   route_prefix: /embeddings

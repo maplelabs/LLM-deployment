@@ -38,9 +38,9 @@ Vector databases like FAISS, Redis provide the ability perform similarity search
    pip install -r py_requirements.txt
    ```
 
-- Start the single-node Ray cluster
+- Start the single-node Ray cluster. This also starts a UI based dashboard on `YOUR-VM-IP:8265` port which you can use to explore logs, check resource utilization, and check for OOM errors etc.
   ```bash
-  ray start --head --dashboard-host 0.0.0.0 # This also starts a UI based dashboard on 0.0.0.0:8265 port which you can use to explore logs, check resource utilization, and check for OOM errors etc.
+  ray start --head --dashboard-host 0.0.0.0 --dashboard-port 8265 --num-cpus 4 --num-gpus 6
   ```
 
 - Deploy the LLM and Embedding Apps/Actors on single-node Ray cluster
