@@ -47,7 +47,7 @@ class LLMDeployment:
             use_cache=True,
             device_map="auto",  # Equally distributes the Llama model on all the GPUs present in your system. It uses Hugging-Face's accelerate library
             max_length=4096,  # Llama has a token limit of 4096 tokens. Set max_length to this value
-            do_sample=False,  # This is equivalent in setting temperatue=0 in OpenAI APIs
+            do_sample=False,  # This is equivalent to setting temperatue=0 in OpenAI APIs
             num_return_sequences=1,
             eos_token_id=tokenizer.eos_token_id,
             pad_token_id=tokenizer.eos_token_id
