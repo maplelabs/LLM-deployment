@@ -73,8 +73,29 @@ Vector databases like FAISS, Redis provide the ability perform similarity search
   ```
   python test_util.py -ep Embedding
   ```
+  ![plot](./images/Embedding-Test.png)
 
 - In order to try out the LLM model
   ```
   python test_util.py -ep LLM
   ```
+  ![plot](./images/LLM-Test.png)
+
+
+# Debugging
+
+If you face any issues with the LLM or the Embedding Model
+
+- Check the Ray cluster status using `ray status`
+
+- Check the application status using `serve status`
+
+To check the logs of the appropriate Application/Actor in Ray dashboard.
+
+- You'll need to open `http://YOUR-VM-IP:8265`
+
+- Click on Actors
+  ![plot](./images/Ray-Actors.png)
+
+- click on LLM deployment (44b96 in the above image). Scroll down to see the output in StdOut, StdErr and System
+  ![plot](./images/LLM-Logs.png)
