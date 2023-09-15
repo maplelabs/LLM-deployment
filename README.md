@@ -6,13 +6,13 @@ It is expected that you're using Ubuntu-22 which has python3
 
 # Repository Details
 
-- LLM.py shows how to deploy Llama-2 with 13 billion parameters.  
-i.e., NousResearch/Llama-2-13b-chat-hf that is fine-tuned for conversational prompts
+- llm.py shows how to deploy Llama-2 with 13 billion parameters (full precision).  
+  i.e., NousResearch/Llama-2-13b-chat-hf that is fine-tuned for conversational prompts
 
-- Embedding.py shows how to deploy an Embedding model.  
-Embedding models are used to generate numerical representations of strings which help in performing semantic search.  
-i.e., BAAI/bge-large-zh generates numerical arrays which captures the semantic meaning of input strings.  
-Vector databases like FAISS, Redis provide the ability perform similarity searches using these embeddings.
+- embedding.py shows how to deploy an Embedding model.  
+  Embedding models are used to generate numerical representations of strings which help in performing semantic search.  
+  i.e., BAAI/bge-large-zh generates numerical arrays which captures the semantic meaning of input strings.  
+  Vector databases like FAISS, Redis provide the ability perform similarity searches using these embeddings.
 
 - os_requirements.txt shows the OS packages that were installed in Ubuntu 22
 
@@ -38,7 +38,8 @@ Vector databases like FAISS, Redis provide the ability perform similarity search
    pip install --require-virtualenv -r py_requirements.txt
    ```
 
-- Start the single-node Ray cluster. This also starts a UI based dashboard on `http://YOUR-VM-IP:8265` port which you can use to explore logs, check resource utilization, and check for OOM errors etc.
+- Start the single-node Ray cluster. This also starts a UI based dashboard on `http://YOUR-VM-IP:8265` port.
+  Dashboard can be used to explore logs, check resource utilization, and OOM errors etc.
   ```bash
   ray start --head --dashboard-host 0.0.0.0 --dashboard-port 8265 --num-cpus 8 --num-gpus 6
   ```
