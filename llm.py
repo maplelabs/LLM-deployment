@@ -18,7 +18,7 @@ MODEL_ID = "NousResearch/Llama-2-13b-chat-hf"
 
 
 # Ray allows you to specify the maximum number of CPUs/GPUs you want this model to reserve
-@ray.serve.deployment(num_replicas=1, ray_actor_options={"num_cpus": 2, "num_gpus": 6})
+@ray.serve.deployment(num_replicas=1, ray_actor_options={"num_cpus": 4, "num_gpus": 6})
 class LLMDeployment:
     """
     Class representing a Ray actor.
