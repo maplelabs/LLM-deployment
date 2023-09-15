@@ -8,13 +8,13 @@ http_options:
 applications:
 - name: embedding_app
   route_prefix: /embeddings # http://YOUR-VM-IP:8090/embeddings/ is the endpoint for Embeddings model
-  import_path: embedding:deployment
+  import_path: embedding:deployment # refers to the variable "deployment" in embedding.py
   runtime_env: {}
   deployments:
-  - name: EmbeddingDeployment
+  - name: EmbeddingDeployment # Ray actor class
 - name: llm_app
   route_prefix: /llm # http://YOUR-VM-IP:8090/llm/ is the endpoint for LLM model
-  import_path: llm:deployment
+  import_path: llm:deployment # refers to the variable "deployment" in llm.py
   runtime_env: {}
   deployments:
-  - name: LLMDeployment
+  - name: LLMDeployment # Ray actor class
